@@ -10,5 +10,5 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'nvim-tree/nvim-web-devicons',
   },
-  keys = { { '<leader>lo', '<cmd>AerialToggle! right<cr>', desc = 'Outline Symbols' } },
+  keys = { { '\\s', '<cmd>AerialToggle! right<cr>', desc = 'Outline Symbols' } },
 }

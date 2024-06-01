@@ -11,7 +11,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    { '\\t', ':Neotree toggle<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
     close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
@@ -21,11 +21,6 @@ return {
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,
-      },
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
       },
     },
     -- Add event handler for setting relative line numbers
