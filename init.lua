@@ -886,6 +886,7 @@ require('lazy').setup({
   require 'kickstart.plugins.maximizer',
   require 'kickstart.plugins.rustaceanvim',
   require 'kickstart.plugins.toggleterm',
+  require 'kickstart.plugins.lsp_signature',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
