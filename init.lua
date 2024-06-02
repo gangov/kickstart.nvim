@@ -289,11 +289,11 @@ require('lazy').setup({
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+        ['<leader>g'] = { name = '[G]it Tools', _ = 'which_key_ignore' },
       }
       -- visual mode
       require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
+        ['<leader>g'] = { 'Git [H]unk' },
       }, { mode = 'v' })
     end,
   },
@@ -887,6 +887,7 @@ require('lazy').setup({
   require 'kickstart.plugins.rustaceanvim',
   require 'kickstart.plugins.toggleterm',
   require 'kickstart.plugins.lsp_signature',
+  require 'kickstart.plugins.diffview',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
