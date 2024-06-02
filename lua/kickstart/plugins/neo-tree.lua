@@ -1,6 +1,4 @@
--- Neo-tree is a Neovim plugin to browse the file system
--- https://github.com/nvim-neo-tree/neo-tree.nvim
-
+-- lua/plugins/neo-tree.lua
 return {
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
@@ -29,10 +27,22 @@ return {
         event = 'neo_tree_buffer_enter',
         handler = function(arg)
           vim.cmd [[
-              setlocal relativenumber
-            ]]
+                setlocal relativenumber
+              ]]
         end,
       },
     },
   },
+  config = function(_, opts)
+    require('neo-tree').setup(opts)
+    -- Automatically open Neo-tree on startup if no file is specified
+    vim.api.nvim_create_autocmd('VimEnter', {
+      callback = function()
+        local argc = vim.fn.argc()
+        if argc == 0 then
+          require('neo-tree.command').execute { toggle = true, dir = vim.loop.cwd() }
+        end
+      end,
+    })
+  end,
 }
