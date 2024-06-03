@@ -20,6 +20,10 @@ return {
       filtered_items = {
         hide_dotfiles = false,
       },
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+      },
     },
     -- Add event handler for setting relative line numbers
     event_handlers = {
