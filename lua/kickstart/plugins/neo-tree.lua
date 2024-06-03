@@ -18,7 +18,7 @@ return {
     },
     filesystem = {
       filtered_items = {
-        hide_dotfiles = false,
+        visible = true,
       },
       follow_current_file = {
         enabled = true,
