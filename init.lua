@@ -713,6 +713,13 @@ require('lazy').setup({
         },
       }
 
+      -- Enable inlay hints
+      lspconfig.rust_analyzer.setup {
+        on_attach = function(client, bufnr)
+          vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+        end,
+      }
+
       -- Example configuration for other language servers
       lspconfig.tsserver.setup {
         on_attach = function(client, bufnr)
@@ -833,11 +840,12 @@ require('lazy').setup({
   require 'kickstart.plugins.blame',
   require 'kickstart.plugins.fidget',
   require 'kickstart.plugins.maximizer',
-  require 'kickstart.plugins.rustaceanvim',
+  -- require 'kickstart.plugins.rustaceanvim',
   require 'kickstart.plugins.toggleterm',
   require 'kickstart.plugins.lsp_signature',
   require 'kickstart.plugins.diffview',
   require 'kickstart.plugins.lazygit',
+  require 'kickstart.plugins.nvim-window-picker',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
