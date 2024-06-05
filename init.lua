@@ -469,11 +469,11 @@ require('lazy').setup({
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end, '[T]oggle Inlay [H]ints')
-          end
+          -- if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+          -- map('<leader>th', function()
+          --   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+          -- end, '[T]oggle Inlay [H]ints')
+          -- end
         end,
       })
 
@@ -705,9 +705,12 @@ require('lazy').setup({
       require('rust-tools').setup {
         tools = {
           inlay_hints = {
-            show_parameter_hints = true,
+            -- INLAY_HINTS disabled
+            show_parameter_hints = false,
             parameter_hints_prefix = '<- ',
             other_hints_prefix = '=> ',
+            -- INLAY_HINTS disabled
+            auto = false,
           },
         },
         server = {
@@ -719,11 +722,11 @@ require('lazy').setup({
       }
 
       -- Enable inlay hints
-      lspconfig.rust_analyzer.setup {
-        on_attach = function(client, bufnr)
-          vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-        end,
-      }
+      -- lspconfig.rust_analyzer.setup {
+      --   on_attach = function(client, bufnr)
+      --     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+      --   end,
+      -- }
 
       -- Example configuration for other language servers
       lspconfig.tsserver.setup {
