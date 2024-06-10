@@ -848,7 +848,7 @@ require('lazy').setup({
   require 'kickstart.plugins.blame',
   require 'kickstart.plugins.fidget',
   require 'kickstart.plugins.maximizer',
-  require 'kickstart.plugins.rustaceanvim',
+  -- require 'kickstart.plugins.rustaceanvim',
   require 'kickstart.plugins.toggleterm',
   require 'kickstart.plugins.lsp_signature',
   require 'kickstart.plugins.diffview',
