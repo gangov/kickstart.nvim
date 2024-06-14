@@ -311,6 +311,7 @@ require('lazy').setup({
             '--glob=!**/dist/*',
             '--glob=!**/yarn.lock',
             '--glob=!**/package-lock.json',
+            '--glob=!**/Cargo.lock',
           },
         },
         pickers = {
@@ -329,6 +330,7 @@ require('lazy').setup({
               '--glob=!**/dist/*',
               '--glob=!**/yarn.lock',
               '--glob=!**/package-lock.json',
+              '--glob=!**/Cargo.lock',
             },
           },
         },
