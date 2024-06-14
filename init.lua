@@ -290,7 +290,9 @@ require('lazy').setup({
           layout_config = {
             width = 0.99,
             height = 0.99,
-            preview_width = 0.7,
+            horizontal = {
+              preview_width = 0.7,
+            },
             prompt_position = 'bottom', -- or 'top', according to your preference
           },
           vimgrep_arguments = {
@@ -888,7 +890,7 @@ require('lazy').setup({
   require 'kickstart.plugins.blame',
   require 'kickstart.plugins.fidget',
   require 'kickstart.plugins.maximizer',
-  -- require 'kickstart.plugins.rustaceanvim',
+  require 'kickstart.plugins.rustaceanvim',
   require 'kickstart.plugins.toggleterm',
   -- require 'kickstart.plugins.lsp_signature',
   require 'kickstart.plugins.diffview',
