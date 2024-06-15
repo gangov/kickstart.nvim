@@ -662,7 +662,6 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'neovim/nvim-lspconfig', -- LSP configuration
-      -- 'simrat39/rust-tools.nvim', -- Rust tools for inlay hints
     },
     config = function()
       -- See `:help cmp`
@@ -744,33 +743,6 @@ require('lazy').setup({
 
       -- Setup nvim-lspconfig
       local lspconfig = require 'lspconfig'
-
-      -- Rust setup with rust-tools.nvim for inlay hints
-      -- require('rust-tools').setup {
-      --   tools = {
-      --     inlay_hints = {
-      --       -- INLAY_HINTS disabled
-      --       show_parameter_hints = false,
-      --       parameter_hints_prefix = '<- ',
-      --       other_hints_prefix = '=> ',
-      --       -- INLAY_HINTS disabled
-      --       auto = false,
-      --     },
-      --   },
-      --   server = {
-      --     on_attach = function(client, bufnr)
-      --       -- Enable completion
-      --       require('cmp').setup.buffer { sources = { { name = 'nvim_lsp' } } }
-      --     end,
-      --   },
-      -- }
-
-      -- Enable inlay hints
-      -- lspconfig.rust_analyzer.setup {
-      --   on_attach = function(client, bufnr)
-      --     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-      --   end,
-      -- }
 
       -- Example configuration for other language servers
       lspconfig.tsserver.setup {
