@@ -6,6 +6,8 @@ vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+-- Enable true color support
+vim.o.termguicolors = true
 
 -- Disable netrw
 vim.g.loaded_netrw = 1
@@ -629,7 +631,7 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
-        rust = { { 'rustfmt' } },
+        -- rust = { { 'rustfmt' } },
       },
     },
   },
@@ -660,7 +662,7 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'neovim/nvim-lspconfig', -- LSP configuration
-      'simrat39/rust-tools.nvim', -- Rust tools for inlay hints
+      -- 'simrat39/rust-tools.nvim', -- Rust tools for inlay hints
     },
     config = function()
       -- See `:help cmp`
@@ -744,24 +746,24 @@ require('lazy').setup({
       local lspconfig = require 'lspconfig'
 
       -- Rust setup with rust-tools.nvim for inlay hints
-      require('rust-tools').setup {
-        tools = {
-          inlay_hints = {
-            -- INLAY_HINTS disabled
-            show_parameter_hints = false,
-            parameter_hints_prefix = '<- ',
-            other_hints_prefix = '=> ',
-            -- INLAY_HINTS disabled
-            auto = false,
-          },
-        },
-        server = {
-          on_attach = function(client, bufnr)
-            -- Enable completion
-            require('cmp').setup.buffer { sources = { { name = 'nvim_lsp' } } }
-          end,
-        },
-      }
+      -- require('rust-tools').setup {
+      --   tools = {
+      --     inlay_hints = {
+      --       -- INLAY_HINTS disabled
+      --       show_parameter_hints = false,
+      --       parameter_hints_prefix = '<- ',
+      --       other_hints_prefix = '=> ',
+      --       -- INLAY_HINTS disabled
+      --       auto = false,
+      --     },
+      --   },
+      --   server = {
+      --     on_attach = function(client, bufnr)
+      --       -- Enable completion
+      --       require('cmp').setup.buffer { sources = { { name = 'nvim_lsp' } } }
+      --     end,
+      --   },
+      -- }
 
       -- Enable inlay hints
       -- lspconfig.rust_analyzer.setup {
@@ -785,16 +787,16 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    'catppuccin/nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'retrobox'
+      vim.cmd.colorscheme 'catppuccin-frappe'
 
       -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
 
@@ -850,9 +852,9 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
+        -- additional_vim_regex_highlighting = { 'ruby' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      -- indent = { enable = true, disable = { 'ruby' } },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
@@ -896,6 +898,7 @@ require('lazy').setup({
   require 'kickstart.plugins.diffview',
   require 'kickstart.plugins.lazygit',
   require 'kickstart.plugins.nvim-window-picker',
+  require 'custom.themes.catppuccin',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
