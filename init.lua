@@ -751,6 +751,22 @@ require('lazy').setup({
           require('cmp').setup.buffer { sources = { { name = 'nvim_lsp' } } }
         end,
       }
+
+      -- Custom Highlight Groups for Completion Menu
+      vim.cmd [[
+      highlight! Pmenu guibg=#282C34 guifg=#ABB2BF
+      highlight! PmenuSel guibg=#61AFEF guifg=#282C34
+      highlight! PmenuThumb guibg=#3E4452
+      highlight! CmpItemAbbrDeprecated guibg=NONE guifg=#808080
+      highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+      highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+      highlight! CmpItemKindVariable guibg=NONE guifg=#C678DD
+      highlight! CmpItemKindInterface guibg=NONE guifg=#56B6C2
+      highlight! CmpItemKindText guibg=NONE guifg=#E06C75
+      highlight! CmpItemKindFunction guibg=NONE guifg=#C678DD
+      highlight! CmpItemKindMethod guibg=NONE guifg=#C678DD
+      highlight! CmpItemKindKeyword guibg=NONE guifg=#F4C430
+    ]]
     end,
   },
 
@@ -768,7 +784,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'catppuccin-frappe'
 
       -- You can configure highlights by doing something like:
-      -- vim.cmd.hi 'Comment gui=none'
+      vim.cmd.hi 'Comment gui=none'
     end,
   },
 
