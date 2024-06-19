@@ -514,9 +514,13 @@ require('lazy').setup({
           --
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+            -- Toggle inlay hints
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
             end, '[T]oggle Inlay [H]ints')
+
+            -- Enable inlay hints by default
+            vim.lsp.inlay_hint.enable()
           end
         end,
       })
@@ -542,43 +546,7 @@ require('lazy').setup({
           -- clangd = {},
           -- gopls = {},
           -- pyright = {},
-          rust_analyzer = {
-            rust = {
-              -- Use a separate target dir for Rust Analyzer. Helpful if you want to use Rust
-              -- Analyzer and cargo on the command line at the same time.
-              analyzerTargetDir = 'target/nvim-rust-analyzer',
-            },
-            server = {
-              -- Improve stability
-              extraEnv = {
-                ['CHALK_OVERFLOW_DEPTH'] = '100000000',
-                ['CHALK_SOLVER_MAX_SIZE'] = '100000000',
-              },
-            },
-            cargo = {
-              -- Check feature-gated code
-              features = 'all',
-              extraEnv = {
-                -- Skip building WASM, there is never need for it here
-                ['SKIP_WASM_BUILD'] = '1',
-              },
-            },
-            procMacro = {
-              -- Don't expand some problematic proc_macros
-              ignored = {
-                ['async-trait'] = { 'async_trait' },
-                ['napi-derive'] = { 'napi' },
-                ['async-recursion'] = { 'async_recursion' },
-                ['async-std'] = { 'async_std' },
-              },
-            },
-            rustfmt = {
-              -- Use nightly formatting.
-              -- See the polkadot-sdk CI job that checks formatting for the current version used in
-              -- polkadot-sdk.
-              extraArgs = { '+nightly-2024-04-10' },
-            },
-          },
+          -- rust_analyzer = {},
           -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
           --
           -- Some languages (like typescript) have entire language plugins that can be useful:
