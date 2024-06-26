@@ -5,7 +5,20 @@ return {
     --options
     sections = {
       lualine_a = { 'mode' },
-      lualine_b = { 'branch', 'diff', 'diagnostics' },
+      lualine_b = {
+        {
+          'branch',
+          fmt = function(branch_name)
+            local max_width = 30
+            if #branch_name > max_width then
+              return branch_name:sub(1, max_width) .. '…'
+            end
+            return branch_name
+          end,
+        },
+        'diff',
+        'diagnostics',
+      },
       lualine_c = {
         {
           'filename',
