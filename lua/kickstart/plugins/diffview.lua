@@ -2,11 +2,24 @@ return {
   'sindrets/diffview.nvim',
   opts = {
     -- options
+    view = {
+      merge_tool = {
+        -- Config for conflicted files in diff views during a merge or rebase.
+        layout = 'diff3_mixed',
+      },
+    },
+    file_panel = {
+      win_config = { -- See |diffview-config-win_config|
+        position = 'right',
+        width = 35,
+        win_opts = {},
+      },
+    },
   },
   keys = {
-    { '<leader>gh', '<cmd>DiffviewFileHistory %<cr>', desc = 'Diff View: current buffer' },
-    { '<leader>gH', '<cmd>DiffviewFileHistory<cr>', desc = 'Diff View: All' },
-    { '<leader>gm', '<cmd>DiffviewOpen<cr>', desc = 'Diff View: Open merge conflicts' },
-    { '<leader>gq', '<cmd>DiffviewClose<cr>', desc = 'Diff View: Close merge conflicts' },
+    { '<leader>gh', '<cmd>DiffviewFileHistory %<cr>', desc = 'Git History: current' },
+    { '<leader>gH', '<cmd>DiffviewFileHistory<cr>', desc = 'Git History: All' },
+    { '<leader>gm', '<cmd>DiffviewOpen<cr>', desc = 'Diff Tool: Open' },
+    { '<leader>gq', '<cmd>DiffviewClose<cr>', desc = 'Diff Tool: Close' },
   },
 }
