@@ -19,7 +19,7 @@ return {
   keys = {
     { '<leader>gh', '<cmd>DiffviewFileHistory %<cr>', desc = 'Git History: current' },
     { '<leader>gH', '<cmd>DiffviewFileHistory<cr>', desc = 'Git History: All' },
-    { '<leader>gm', '<cmd>DiffviewOpen<cr>', desc = 'Diff Tool: Open' },
-    { '<leader>gq', '<cmd>DiffviewClose<cr>', desc = 'Diff Tool: Close' },
+    { '<leader>go', '<cmd>DiffviewOpen<cr>', desc = 'Diff Tool: [O]pen' },
+    { '<leader>gq', '<cmd>DiffviewClose<cr>', desc = 'Diff Tool: [Q]uit' },
   },
 }
