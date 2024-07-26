@@ -306,6 +306,7 @@ require('lazy').setup({
             '--line-number', -- Show line numbers
             '--column', -- Show column numbers
             '--smart-case', -- Smart case search
+            '--fixed-strings', -- Add this line to treat the search patterns as literal strings
 
             -- Exclude some patterns from search
             '--glob=!**/.git/*',
