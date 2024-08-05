@@ -9,7 +9,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\t', ':Neotree reveal<CR>', desc = 'NeoTree reveal' },
+    { '\\t', ':Neotree toggle<CR>', desc = 'NeoTree reveal' },
   },
   opts = {
     close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
