@@ -294,6 +294,7 @@ require('lazy').setup({
             height = 0.99,
             horizontal = {
               preview_width = 0.7,
+              preview_cutoff = 1, -- Ensures preview is shown even for small windows
             },
             prompt_position = 'bottom', -- or 'top', according to your preference
           },
