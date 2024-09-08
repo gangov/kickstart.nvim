@@ -891,6 +891,7 @@ require('lazy').setup({
   require 'kickstart.plugins.nvim-treesitter-context',
   require 'kickstart.plugins.lualine',
   require 'custom.themes.catppuccin',
+  require 'kickstart.plugins.markdown',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
