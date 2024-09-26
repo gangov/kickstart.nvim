@@ -297,7 +297,7 @@ require('lazy').setup({
               preview_width = 0.625,
               preview_cutoff = 1, -- Ensures preview is shown even for small windows
             },
-            prompt_position = 'bottom', -- or 'top', according to your preference
+            prompt_position = 'top', -- or 'top', according to your preference
           },
           vimgrep_arguments = {
             'rg',
@@ -320,6 +320,7 @@ require('lazy').setup({
             '--glob=!**/package-lock.json',
             '--glob=!**/Cargo.lock',
           },
+          sorting_strategy = 'ascending', -- shows `Results` from top to bottom
         },
         pickers = {
           find_files = {
