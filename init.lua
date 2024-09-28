@@ -885,7 +885,6 @@ require('lazy').setup({
   require 'kickstart.plugins.maximizer',
   require 'kickstart.plugins.rustaceanvim',
   require 'kickstart.plugins.toggleterm',
-  -- require 'kickstart.plugins.lsp_signature',
   require 'kickstart.plugins.diffview',
   require 'kickstart.plugins.lazygit',
   require 'kickstart.plugins.nvim-window-picker',
